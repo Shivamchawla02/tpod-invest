@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 /* =========================================
    SIMPLE INLINE ICONS
@@ -146,16 +147,15 @@ export default function Footer() {
 
           <div>
 
+            {/* LOGO */}
             <Link href="/" className="inline-block">
-
-              <div className="text-[30px] font-bold leading-none tracking-[-2px] text-[#10254A]">
-                TP<span className="text-[#C9A15B]">O</span>D
-              </div>
-
-              <div className="mt-1 text-[7px] font-semibold tracking-[1.5px] text-gray-500">
-                INVESTMENTS & FINANCIAL SERVICES
-              </div>
-
+              <Image
+                src="/logo.png"
+                alt="TPOD Invest"
+                width={180}
+                height={55}
+                className="h-auto w-[170px] object-contain"
+              />
             </Link>
 
             <p className="mt-6 max-w-[280px] text-sm leading-6 text-gray-500">

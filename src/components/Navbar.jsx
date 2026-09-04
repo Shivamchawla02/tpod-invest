@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Menu,
   X,
@@ -18,15 +19,14 @@ export default function Navbar() {
 
           {/* LOGO */}
           <Link href="/" className="flex items-center">
-            <div>
-              <div className="text-[30px] font-bold leading-none tracking-[-2px] text-[#10254A]">
-                TP<span className="text-[#C9A15B]">O</span>D
-              </div>
-
-              <div className="mt-1 text-[7px] font-semibold tracking-[1.5px] text-gray-500">
-                INVESTMENTS & FINANCIAL SERVICES
-              </div>
-            </div>
+            <Image
+              src="/logo.png"
+              alt="TPOD Invest"
+              width={180}
+              height={55}
+              priority
+              className="h-auto w-[170px] object-contain"
+            />
           </Link>
 
           {/* DESKTOP NAV */}
@@ -108,6 +108,7 @@ export default function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="rounded-lg p-2 text-[#10254A] lg:hidden"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
