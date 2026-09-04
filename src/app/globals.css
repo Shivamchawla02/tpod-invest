@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --tpod-navy: #10254a;
+  --tpod-gold: #c9a15b;
+  --tpod-text: #111827;
+  --tpod-muted: #667085;
+  --tpod-bg: #fafbfd;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  background: var(--tpod-bg);
+  color: var(--tpod-text);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #10254a;
+  color: white;
+}
+
+.container-tpod {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.tpod-section {
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .container-tpod {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .tpod-section {
+    padding: 70px 0;
+  }
 }
